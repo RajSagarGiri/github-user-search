@@ -32,7 +32,7 @@ componentWillUnmount(){
     return (
       <div className="App">
        <Head  getUser={this.userProfile}/>
-       {this.state.info  && <div><Profile data={this.state.info}/></div>}
+    {this.state.info  && <div>{this.state.info.hasOwnProperty('login')&&<Profile data={this.state.info}/>}</div>}
       </div>
     );
   }

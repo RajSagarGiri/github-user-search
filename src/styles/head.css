@@ -30,7 +30,7 @@ img{
 }
 
 input{
-    width: 20vw;
+    width: 25vw;
     margin-left:  5vw;
     font-size:  14px;
     padding: 12.5px;
@@ -55,7 +55,7 @@ input{
 input:focus{
     background-color:  white;
     color: black;
-    width: 25vw;
+    width: 35vw;
     transition:  all .3s;
 }
 
