@@ -10,23 +10,37 @@ const Profile = (props) =>
 {props.data.name && <div className='name'>{props.data.name}</div>}
 </a>
 <div className='uname'>
-<a href={props.data.html_url} target="_blank" rel="noopener noreferrer">{props.data.login}</a>
+{props.data.login}
 </div>
 {props.data.bio && <div className='bio'>{props.data.bio}</div>}
-<div><button>Follow</button></div>
+<a href={props.data.html_url} target="_blank" rel="noopener noreferrer"><button id='follow'>Follow</button></a>
 </div>
 
 
 <div className='right-section'>
 <nav>
-    <ul>
-       <li><a href={props.data.repos_url}>Repositories<span>{props.data.public_repos}</span></a></li>
-        <li><a href={props.data.followers_url}>Followers<span>{props.data.followers}</span></a></li>
-        <li><a href={props.data.following_url}>Following<span>{props.data.following}</span></a></li>
+    <ul className='menu'>
+         <li><a href='#null' className="tab" autofocus>Overview</a></li>
+         <li>
+           <a href={`https://github.com/${props.data.login}?tab=repositories`} className='tab' target="_blank" rel="noopener noreferrer">Repositories<span className='val'>{props.data.public_repos}</span></a>
+        </li>
+        <li>
+            <a href='#null' className='tab'>Public Gists<span className='val'>{props.data.public_gists}</span></a>
+        </li>
+        <li>
+            <a href={`https://github.com/${props.data.login}?tab=followers`} className='tab' target="_blank" rel="noopener noreferrer">Followers<span className='val'>{props.data.followers}</span></a>
+        </li>
+        <li>
+            <a href={`https://github.com/${props.data.login}?tab=following`} className='tab' target="_blank" rel="noopener noreferrer">Following<span className='val'>{props.data.following}</span></a>
+        </li>
     </ul>
+    <div>
+        helloworld
+    </div>
 </nav>
 </div>
 
 </div>
 
-    export default Profile;
+
+export default Profile;
