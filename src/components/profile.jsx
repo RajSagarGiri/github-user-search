@@ -1,14 +1,15 @@
 import React from 'react';
 import '../styles/profile.css';
-import Top from './top_repo';
+import Top from './top_repo.jsx';
 
 class Profile extends React.Component{ 
 
 render(){
 
-const  rep  = this.props.repos.map(i => <Top val={i}/>)
+const  reps  = this.props.proj&&this.props.proj.map((i, j) => <Top key ={j} val={i}/>)
 
 return(<div className='content'>
+
 <div className='left-section'>
 <a href={this.props.data.avatar_url} target="_blank" className="tile" rel="noopener noreferrer">
 <img src={this.props.data.avatar_url} alt='dp' />
@@ -20,7 +21,6 @@ return(<div className='content'>
 {this.props.data.bio && <div className='bio'>{this.props.data.bio}</div>}
 <a href={this.props.data.html_url} target="_blank" rel="noopener noreferrer"><button id='follow'>Follow</button></a>
 </div>
-
 
 <div className='right-section'>
 <nav>
@@ -40,12 +40,11 @@ return(<div className='content'>
         </li>
     </ul>
 </nav>
-<div>
-    {rep}
+<div className='repo-info'>
+    {reps}
+</div>
 </div>
 
-</div>
-  
 </div>)
 }
 }

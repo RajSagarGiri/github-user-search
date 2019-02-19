@@ -122,3 +122,9 @@
     font-weight: bolder;
     border-bottom: rgb(255, 102, 0) solid 2px;
 }
+
+
+.repo-info{
+    display: grid;
+    grid-template-columns: auto auto;
+}

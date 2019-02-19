@@ -12,9 +12,10 @@ class App extends Component {
 
  repoInfo = async (data)=>{
    const call = await fetch(data.repos_url);
-   const  rep = await call.json();
+   let  rep = await call.json();
+   rep = rep.slice(0,8);
    this.setState({repos: rep});
-   console.log(this.state.repos[0]);
+   console.log(rep[0]);
  } 
 
 userProfile = async (event) =>{
@@ -40,7 +41,7 @@ componentWillUnmount(){
     return (
       <div className="App">
        <Head  getUser={this.userProfile}/>
-    {this.state.info  && <div>{this.state.info.hasOwnProperty('login')&&<Profile data={this.state.info} repo={this.state.repos}/>}</div>}
+    {this.state.info  && <div>{this.state.info.hasOwnProperty('login')&&<Profile data={this.state.info} proj={this.state.repos}/>}</div>}
       </div>
     );
   }
