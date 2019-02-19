@@ -15,13 +15,12 @@ class App extends Component {
    let  rep = await call.json();
    rep = rep.slice(0,8);
    this.setState({repos: rep});
-   console.log(rep[0]);
  } 
 
 userProfile = async (event) =>{
   event.preventDefault();
   const key = event.target.elements.key.value;
-  const call = await fetch(`https://api.github.com/users/${key}`);
+  const call = await fetch(`https://api.github.com/users/${key.trim()}`);
   const data = await call.json();
   this.setState({info:data});
   this.repoInfo(data);

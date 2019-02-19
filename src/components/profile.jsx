@@ -18,20 +18,20 @@ return(<div className='content'>
 <div className='uname'>
 {this.props.data.login}
 </div>
-{this.props.data.bio && <div className='bio'>{this.props.data.bio}</div>}
 <a href={this.props.data.html_url} target="_blank" rel="noopener noreferrer"><button id='follow'>Follow</button></a>
+{this.props.data.bio && <div className='bio'>{this.props.data.bio}</div>}
+{this.props.data.company && <div className='company'>{this.props.data.company}</div>}
+{this.props.data.location && <div className='loc'><img src='loc.png' alt='loc'/>{this.props.data.location}</div>}
+{this.props.data.blog && <div className='blog'><a href={this.props.data.blog} target="_blank" rel="noopener noreferrer">{this.props.data.blog}</a></div>}
 </div>
 
 <div className='right-section'>
 <nav>
     <ul className='menu'>
-         <li><a href='#null' className="tab">Overview</a></li>
          <li>
            <a href={`https://github.com/${this.props.data.login}?tab=repositories`} className='tab' target="_blank" rel="noopener noreferrer">Repositories<span className='val'>{this.props.data.public_repos}</span></a>
         </li>
-        <li>
-            <a href='#null' className='tab'>Public Gists<span className='val'>{this.props.data.public_gists}</span></a>
-        </li>
+        
         <li>
             <a href={`https://github.com/${this.props.data.login}?tab=followers`} className='tab' target="_blank" rel="noopener noreferrer">Followers<span className='val'>{this.props.data.followers}</span></a>
         </li>
