@@ -1,3 +1,10 @@
 .content{
     display: flex;
 }
+
+
+.error{
+    text-align: center;
+    margin-top:16vw;
+    color: red;
+}
