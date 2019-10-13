@@ -1,21 +1,21 @@
-.item{
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid #d1d5da;
-  font-size: 14px;
-  margin: 0  16px 16px 0;
-  padding: 16px;
-  width: 350px;
-  height: 100px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif sans-serif -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  border-radius: 10px;
+.item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #d1d5da;
+    font-size: 14px;
+    margin: 0 16px 16px 0;
+    padding: 16px;
+    width: 350px;
+    height: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif sans-serif -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 10px;
 }
 
 
-.title{
+.title {
     margin-bottom: 12.5px;
 }
 
-.title>a{
+.title>a {
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -23,7 +23,7 @@
     line-height: 21px;
 }
 
-.extra-info{
+.extra-info {
     font-size: 12px;
     line-height: 18px;
     margin: 8px 0 16px 0;
@@ -33,32 +33,32 @@
 }
 
 
-.add-info{
+.add-info {
     display: flex;
     align-items: center;
     color: #586069;
-    line-height:  12px;
+    line-height: 12px;
 }
 
 
-.list{
+.list {
     margin-right: 7.5px;
     display: inline-block;
     margin-right: 30px;
     font-size: 12.5px;
 }
 
-.list>img{
+.list>img {
     height: 12px;
     vertical-align: middle;
     margin: 0 7.5px 3.5px 0;
 }
 
 
-.add-info:hover{
+.add-info:hover {
     color: #0366D6;
 }
 
-.title:hover{
+.title:hover {
     text-decoration: underline;
 }

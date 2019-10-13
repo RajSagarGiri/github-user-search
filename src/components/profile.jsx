@@ -2,52 +2,84 @@ import React from 'react';
 import '../styles/profile.css';
 import Top from './top_repo.jsx';
 
-class Profile extends React.Component{ 
+export default function({ proj, data }) {
+  const reps =
+    Array.isArray(proj) && proj.map((i, j) => <Top key={j} val={i} />);
 
-render(){
+  return (
+    <div className='content'>
+      <div className='left-section'>
+        <a
+          href={data.avatar_url}
+          target='_blank'
+          className='tile'
+          rel='noopener noreferrer'
+        >
+          <img src={data.avatar_url} alt='dp' />
+          {data.name && <div className='name'>{data.name}</div>}
+        </a>
+        <div className='uname'>{data.login}</div>
+        <a href={data.html_url} target='_blank' rel='noopener noreferrer'>
+          <button id='follow'>Follow</button>
+        </a>
+        {data.bio && <div className='bio'>{data.bio}</div>}
+        {data.company && <div className='company'>{data.company}</div>}
+        {data.location && (
+          <div className='loc'>
+            <img src='loc.png' alt='loc' />
+            {data.location}
+          </div>
+        )}
+        {data.blog && (
+          <div className='blog'>
+            <a href={data.blog} target='_blank' rel='noopener noreferrer'>
+              {data.blog}
+            </a>
+          </div>
+        )}
+      </div>
 
-const  reps  = this.props.proj&&this.props.proj.map((i, j) => <Top key ={j} val={i}/>)
+      <div className='right-section'>
+        <nav>
+          <ul className='menu'>
+            <li>
+              <a
+                href={`https://github.com/${data.login}?tab=repositories`}
+                className='tab'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Repositories
+                <span className='val'>{data.public_repos}</span>
+              </a>
+            </li>
 
-return(<div className='content'>
-
-<div className='left-section'>
-<a href={this.props.data.avatar_url} target="_blank" className="tile" rel="noopener noreferrer">
-<img src={this.props.data.avatar_url} alt='dp' />
-{this.props.data.name && <div className='name'>{this.props.data.name}</div>}
-</a>
-<div className='uname'>
-{this.props.data.login}
-</div>
-<a href={this.props.data.html_url} target="_blank" rel="noopener noreferrer"><button id='follow'>Follow</button></a>
-{this.props.data.bio && <div className='bio'>{this.props.data.bio}</div>}
-{this.props.data.company && <div className='company'>{this.props.data.company}</div>}
-{this.props.data.location && <div className='loc'><img src='loc.png' alt='loc'/>{this.props.data.location}</div>}
-{this.props.data.blog && <div className='blog'><a href={this.props.data.blog} target="_blank" rel="noopener noreferrer">{this.props.data.blog}</a></div>}
-</div>
-
-<div className='right-section'>
-<nav>
-    <ul className='menu'>
-         <li>
-           <a href={`https://github.com/${this.props.data.login}?tab=repositories`} className='tab' target="_blank" rel="noopener noreferrer">Repositories<span className='val'>{this.props.data.public_repos}</span></a>
-        </li>
-        
-        <li>
-            <a href={`https://github.com/${this.props.data.login}?tab=followers`} className='tab' target="_blank" rel="noopener noreferrer">Followers<span className='val'>{this.props.data.followers}</span></a>
-        </li>
-        <li>
-            <a href={`https://github.com/${this.props.data.login}?tab=following`} className='tab' target="_blank" rel="noopener noreferrer">Following<span className='val'>{this.props.data.following}</span></a>
-        </li>
-    </ul>
-</nav>
-<div className='repo-info'>
-    {reps}
-</div>
-</div>
-
-</div>)
+            <li>
+              <a
+                href={`https://github.com/${data.login}?tab=followers`}
+                className='tab'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Followers
+                <span className='val'>{data.followers}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={`https://github.com/${data.login}?tab=following`}
+                className='tab'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Following
+                <span className='val'>{data.following}</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div className='repo-info'>{reps}</div>
+      </div>
+    </div>
+  );
 }
-}
-
-
-export default Profile;

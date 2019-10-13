@@ -1,66 +1,64 @@
-
-.head-section{
+.head-section {
     display: flex;
-    margin :0  auto;
-    background-color:  rgb(36, 36, 36);
+    margin: 0 auto;
+    background-color: rgb(36, 36, 36);
     align-items: center;
     height: auto;
     padding: 10px;
-    width:  auto;
-    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logo{
+.logo {
     min-width: auto;
 }
 
-.logo>a{
+.logo>a {
     display: flex;
     align-items: center;
     color: white;
     text-decoration: none;
-    padding-right: 15px ;
+    padding-right: 15px;
 }
 
 
-img{
+img {
     margin: 10px;
     height: 25px;
     margin-left: 1vw;
 }
 
-input{
+input {
     width: 25vw;
-    margin-left:  5vw;
-    font-size:  14px;
+    margin-left: 5vw;
+    font-size: 14px;
     padding: 12.5px;
     height: 10px;
     background-color: rgb(116, 116, 116);
     color: white;
-    border:  0.005px solid silver;
+    border: 0.005px solid silver;
     border-radius: 2.5px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-.logo>a>span{
+.logo>a>span {
     font-weight: 600;
     font-size: 20px;
 }
 
-.logo>a:hover{
+.logo>a:hover {
     color: rgb(108, 204, 108);
 }
 
-input:focus{
-    background-color:  white;
+input:focus {
+    background-color: white;
     color: black;
     width: 35vw;
-    transition:  all .3s;
+    transition: all .3s;
 }
 
-::placeholder{
-color: rgb(161, 154, 154);
-font-weight: 100;
+::placeholder {
+    color: rgb(161, 154, 154);
+    font-weight: 100;
 }
-

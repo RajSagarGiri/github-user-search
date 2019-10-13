@@ -1,10 +1,15 @@
-.content{
+.content {
     display: flex;
 }
 
 
-.error{
+.error {
     text-align: center;
-    margin-top:16vw;
+    margin-top: 16vw;
     color: red;
+}
+
+.loader {
+    height: 150px;
+
 }
